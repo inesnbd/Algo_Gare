@@ -1,0 +1,61 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">   
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+  <script src="https://d3js.org/d3.v3.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsnetworkx/0.3.4/jsnetworkx.js" integrity="sha512-Zm+tvAhuPQImkj77xkS0P/PFCuo0/kVsvBmy/bGWBDwLVdpD36Thyk1lTgacr0dT7xN8h9HpGlr9XGcZP90fjw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+  <title>Gare</title>
+</head>
+<body>
+    <h1>Itinéraire de gare</h1>
+    <section>
+        <h3>Choissisez votre itinéraire en vous aidant du graph :</h3>
+        <form action="" method="get" >
+            <div>
+                <label>Départ</label>
+                <select id="depart"></select>
+                <label>Arrivée</label>
+                <select id="arrivee"></select>
+                <button type="button" onclick="rechercher()">Rechercher</button>
+            </div>
+          </form>
+    </section>
+
+    <section>
+        <h2 style="margin-top: 2.5%;">Graph</h2>
+        <div id="canvas"></div>
+
+    </section>
+
+    <section>
+        <h2>Tableau d'analyse</h2>
+        <h3>Vous allez parcourir : </h3>
+        <table>
+            <thead> <!-- En-tête du tableau -->
+                <tr>
+                    <th>Parcours en Profondeur</th>
+                    <th>Parcours en Largeur</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div id="temps"></div></td>
+                    <td><div id="km"></div></td>
+                </tr>
+                <tr>
+                    <td id="time" ></td>
+                    <td id="kilom"></td>
+                </tr>
+            </tbody>
+         </table>
+    </section>
+    <script src="parcours.js"></script>
+</body>
+</html>
